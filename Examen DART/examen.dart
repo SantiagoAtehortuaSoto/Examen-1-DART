@@ -41,7 +41,7 @@ void main() {
   }
 }
 
-/// Función para agregar un nuevo producto a la lista.
+// Agregar un nuevo producto a la lista.
 void agregarProducto(List<Map<String, dynamic>> productos) {
   print("\n--- AGREGAR NUEVO PRODUCTO ---");
 
@@ -52,8 +52,6 @@ void agregarProducto(List<Map<String, dynamic>> productos) {
     print("\n[ERROR] El nombre no puede estar vacío.");
     return;
   }
-
-  // Validar que el nombre solo contenga letras y espacios
   final RegExp soloLetras = RegExp(r'^[a-zA-Z\s]+$');
   if (!soloLetras.hasMatch(nombre)) {
     print("\n[ERROR] El nombre solo puede contener letras y espacios.");
@@ -126,7 +124,6 @@ void actualizarProducto(List<Map<String, dynamic>> productos) {
   stdout.write("Nuevo nombre (deje en blanco para no cambiar): ");
   String? nuevoNombre = stdin.readLineSync();
   if (nuevoNombre != null && nuevoNombre.isNotEmpty) {
-    // Validar que el nombre solo contenga letras y espacios
     final RegExp soloLetras = RegExp(r'^[a-zA-Z\s]+$');
     if (soloLetras.hasMatch(nuevoNombre)) {
       productoAActualizar['nombre'] = nuevoNombre;
